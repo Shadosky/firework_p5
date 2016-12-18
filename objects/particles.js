@@ -44,7 +44,6 @@ function Particles(x, y, force , color)
 
 		if (this.life < 200) {
 			this.vel.mult(.8);
-		}
-		
+		}		
 	}
 }

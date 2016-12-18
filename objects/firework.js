@@ -45,12 +45,12 @@ function Firework()
 	}
 
 	this.explode = function() {
-		for (var i = 0; i < 100; i++) {
+		for (var i = 0; i < 75; i++) {
 			this.particles.push(
 				new Particles(
 					this.firework.pos.x, 
 					this.firework.pos.y, 
-					createVector(random(-5, 5), random(-5, 5)),
+					p5.Vector.random2D().setMag(random(.1, 5)),
 					this.color
 				)
 			);
