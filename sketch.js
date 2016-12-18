@@ -21,14 +21,17 @@ function draw() {
     ground.show();
     stars.show();
 
-    if(random(1) < .05)
+    if(random(1) < .025)
     	fireworks.push(new Firework());
 
     for (var i = 0; i < fireworks.length; i++) {
     	fireworks[i].update();
-    	fireworks[i].show();
+    	
 
-    	if(fireworks[i].dead) 
+    	if(fireworks[i].dead) { 
 			fireworks.splice(i, 1);
+		} else {
+			fireworks[i].show();
+		}	
     }
 }

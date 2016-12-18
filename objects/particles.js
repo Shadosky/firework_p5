@@ -6,7 +6,6 @@ function Particles(x, y, force , color)
 	this.acc = createVector(0, 0);
 	this.life = 255;
 
-	this.dead = false;
 	this.color = color;
 
 	
@@ -23,12 +22,6 @@ function Particles(x, y, force , color)
     	this.vel.add(this.acc);
     	this.pos.add(this.vel);
     	this.acc.mult(0);
-
-    	if(this.pos.y >= height - ground.sick) {
-    		this.vel.mult(0);
-    		this.pos.y = height - ground.sick;
-    		this.dead = true;
-    	}
     }
 	
 	this.applyForce = function(force)
@@ -38,12 +31,11 @@ function Particles(x, y, force , color)
 
 	this.decay = function ()
 	{	
-		if (this.life > 0) {
-			this.life -= 5;
-		}
+		this.life = this.life - 5;
 
 		if (this.life < 200) {
 			this.vel.mult(.8);
-		}		
+		}
+		
 	}
 }

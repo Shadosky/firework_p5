@@ -5,8 +5,9 @@ function Firework()
 	this.particles = [];
 	this.dead = false;
 	this.color = random(colorPalet.colors);
+	this.lifespan = 50;
 
-	this.firework = new Particles(random(10, width-10), height - ground.sick, createVector(0, random(-13, -7)), this.color);
+	this.firework = new Particles(random(50, width-50), height - ground.sick, createVector(0, random(-13, -7)), this.color);
 
 
 	this.update = function()
@@ -19,17 +20,18 @@ function Firework()
     			this.explode();
     		}
     	} else {
-    		for (var i = 0; i < this.particles.length; i++) {
-				this.particles[i].applyForce(gravity);
-				this.particles[i].update();
-				this.particles[i].decay();
-				if(this.particles[i].dead) {
-					this.particles.splice(i, 1);
-					if(this.particles.length == 0) {
-						this.dead = true;
-					}
+    		if(this.lifespan > -100) {
+    			for (var i = 0; i < this.particles.length; i++) {
+								
+					this.particles[i].applyForce(gravity);
+					this.particles[i].update();
+					this.particles[i].decay();	
 				}
-			}
+				this.lifespan --;
+    		} else {
+    			this.dead = true;
+    		}
+    		
     	}
     }
 
