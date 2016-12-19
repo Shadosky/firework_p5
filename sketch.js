@@ -21,7 +21,7 @@ function draw() {
     ground.show();
     stars.show();
 
-    if (random(1) < .025)
+    if (random(1) < .05)
         fireworks.push(new Firework());
 
     for (var i = 0; i < fireworks.length; i++) {
