@@ -27,7 +27,7 @@ function Particles(x, y, force, color) {
     this.decay = function () {
         this.life = this.life - 5;
 
-        if (this.life < 150) {
+        if (this.life < 200) {
             this.vel.mult(.8);
         }
 
