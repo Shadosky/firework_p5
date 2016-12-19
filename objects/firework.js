@@ -78,7 +78,6 @@ function Firework() {
                     var y = sin(i);
 
                     var vector = createVector(x, y);
-                    console.log((vector.x * vector.x) + (vector.y * vector.y));
                     this.particles.push(
                         new Particles(
                             this.firework.pos.x,
