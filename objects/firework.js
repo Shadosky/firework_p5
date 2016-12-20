@@ -21,7 +21,7 @@ function Firework(x, y) {
     }
 
     if (x && y)
-        this.firework = new Particles(x, y, createVector(random(-5, 5), random(-4, -2)), this.color);
+        this.firework = new Particles(x, y, createVector(random(-8, 8), random(-8, -4)), this.color);
     else
         this.firework = new Particles(random(50, width - 50), height - ground.sick, createVector(0, random(-13, -7)), this.color);
 
