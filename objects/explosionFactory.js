@@ -105,4 +105,14 @@ function ExplosionFactory(color) {
         }
         return this.explosion;
     }
+
+    this.cluster = function (startX, startY) {
+        for (var i = 0; i < 4; i++) {
+            this.explosion.push(
+                new Firework(startX, startY)
+            );
+        }
+
+        return this.explosion;
+    }
 }
